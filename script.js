@@ -1,10 +1,12 @@
-let timeLeft = 100;
+let timeLeft = 10;
 let timer;
 const audio = document.getElementById("timerAudio");
 audio.playbackRate = 0.5;
 let score = 0;
+let result = "Failed";
 let currentQuestionIndex = 0;
 let quiz = [];
+const PASSING_SCORE = 50;
 
 document.getElementById("start-btn").addEventListener("click", () => {
   document.getElementById("home-page").style.display = "none";
@@ -73,6 +75,8 @@ const checkAnswer = () => {
 
     currentQuestionIndex++;
 
+    100;
+
     if (currentQuestionIndex < quiz.length) {
       displayQuestion();
     } else {
@@ -86,7 +90,16 @@ const showResult = () => {
   audio.pause();
   document.getElementById("quiz").style.display = "none";
   document.getElementById("result").style.display = "block";
-  document.getElementById("score").textContent = `Your score is: ${score}`;
+
+  if (score >= PASSING_SCORE) {
+    result = "Passed";
+  } else {
+    result = "Failed";
+  }
+
+  document.getElementById(
+    "score"
+  ).textContent = `Your score is: ${score} \n  Status: ${result}`;
 };
 
 document.getElementById("submit-btn").addEventListener("click", checkAnswer);
