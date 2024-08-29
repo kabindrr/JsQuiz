@@ -18,6 +18,18 @@ document.getElementById("start-btn").addEventListener("click", () => {
   startTimer();
 });
 
+document.getElementById("restart-btn").addEventListener("click", () => {
+  timeLeft = 10;
+  score = 0;
+  currentQuestionIndex = 0;
+
+  document.getElementById("result").style.display = "none";
+  document.getElementById("home-page").style.display = "block";
+
+  audio.pause();
+  audio.currentTime = 0;
+});
+
 const fetchQuizQuestion = async () => {
   try {
     const response = await fetch("quiz.json");
@@ -99,7 +111,7 @@ const showResult = () => {
 
   document.getElementById(
     "score"
-  ).textContent = `Your score is: ${score} \n  Status: ${result}`;
+  ).innerHTML = `Your score is: ${score}<br/> status: ${result}`;
 };
 
 document.getElementById("submit-btn").addEventListener("click", checkAnswer);
