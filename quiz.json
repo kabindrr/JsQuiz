@@ -1,0 +1,69 @@
+{
+  "quiz": [
+    {
+      "question": "What is the capital city of France?",
+      "options": ["Berlin", "Madrid", "Paris", "Rome"],
+      "answer": "Paris"
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "options": ["Earth", "Mars", "Jupiter", "Venus"],
+      "answer": "Mars"
+    },
+    {
+      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "options": [
+        "William Shakespeare",
+        "Mark Twain",
+        "Jane Austen",
+        "Charles Dickens"
+      ],
+      "answer": "William Shakespeare"
+    },
+    {
+      "question": "What is the largest ocean on Earth?",
+      "options": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Southern Ocean",
+        "Pacific Ocean"
+      ],
+      "answer": "Pacific Ocean"
+    },
+    {
+      "question": "Which element has the chemical symbol 'O'?",
+      "options": ["Gold", "Oxygen", "Hydrogen", "Osmium"],
+      "answer": "Oxygen"
+    },
+    {
+      "question": "In which year did the Titanic sink?",
+      "options": ["1905", "1912", "1920", "1935"],
+      "answer": "1912"
+    },
+    {
+      "question": "Which country is known as the Land of the Rising Sun?",
+      "options": ["China", "Japan", "South Korea", "India"],
+      "answer": "Japan"
+    },
+    {
+      "question": "What is the smallest unit of life?",
+      "options": ["Atom", "Molecule", "Cell", "Organism"],
+      "answer": "Cell"
+    },
+    {
+      "question": "Who was the first person to walk on the moon?",
+      "options": [
+        "Neil Armstrong",
+        "Buzz Aldrin",
+        "Yuri Gagarin",
+        "John Glenn"
+      ],
+      "answer": "Neil Armstrong"
+    },
+    {
+      "question": "Which language is the most widely spoken in the world?",
+      "options": ["English", "Mandarin Chinese", "Spanish", "Hindi"],
+      "answer": "Mandarin Chinese"
+    }
+  ]
+}

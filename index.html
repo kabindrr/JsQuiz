@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="quiz-container">
+        <div id="home-page" class="screen">
+          <h1>Welcome to the Quiz</h1>
+          <p>You have 100 seconds to complete the quiz.</p>
+          <p>Press start button to begin</p>
+
+          <button id="start-btn">Start Quiz</button>
+        </div>
+
+        <div id="quiz" style="display: none">
+          <p id="question"></p>
+          <div class="options"></div>
+
+          <div id="timer">Time Left: 100s</div>
+          <button id="submit-btn">Submit answer</button>
+        </div>
+        <div id="result" style="display: none">
+          <h2>Quiz Finished</h2>
+          <p id="score">Your score is: 0</p>
+        </div>
+      </div>
+      <audio id="timerAudio" loop>
+        <source src="./assets/click.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
