@@ -1,4 +1,4 @@
-let timeLeft = 10;
+let timeLeft = 60;
 let timer;
 const audio = document.getElementById("timerAudio");
 audio.playbackRate = 0.5;
@@ -6,7 +6,7 @@ let score = 0;
 let result = "Failed";
 let currentQuestionIndex = 0;
 let quiz = [];
-const PASSING_SCORE = 50;
+const PASSING_SCORE = 10;
 
 document.getElementById("start-btn").addEventListener("click", () => {
   document.getElementById("home-page").style.display = "none";
@@ -19,7 +19,7 @@ document.getElementById("start-btn").addEventListener("click", () => {
 });
 
 document.getElementById("restart-btn").addEventListener("click", () => {
-  timeLeft = 10;
+  timeLeft = 60;
   score = 0;
   currentQuestionIndex = 0;
 
@@ -34,7 +34,10 @@ const fetchQuizQuestion = async () => {
   try {
     const response = await fetch("quiz.json");
     const data = await response.json();
-    quiz = data.quiz;
+    const allQuestions = data.quiz;
+
+    const shuffledQuestion = allQuestions.sort(() => Math.random() - 0.5);
+    quiz = shuffledQuestion.slice(0, 5);
     console.log(quiz);
     displayQuestion();
   } catch (error) {

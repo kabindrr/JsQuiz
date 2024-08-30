@@ -6,10 +6,13 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #30040456;
+  background-image: url();
 }
 
 .quiz-container {
-  width: 100%;
+  width: 600px;
+  height: auto;
+
   text-align: center;
   padding: 20px;
   border: 1px solid #ddd;
