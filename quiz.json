@@ -2,16 +2,20 @@
   "quiz": [
     {
       "question": "What is the capital city of France?",
+      "type": "options",
       "options": ["Berlin", "Madrid", "Paris", "Rome"],
       "answer": "Paris"
     },
     {
       "question": "Which planet is known as the Red Planet?",
+      "type": "options",
       "options": ["Earth", "Mars", "Jupiter", "Venus"],
       "answer": "Mars"
     },
     {
       "question": "Who wrote the play 'Romeo and Juliet'?",
+      "type": "options",
+
       "options": [
         "William Shakespeare",
         "Mark Twain",
@@ -22,6 +26,8 @@
     },
     {
       "question": "What is the largest ocean on Earth?",
+      "type": "options",
+
       "options": [
         "Atlantic Ocean",
         "Indian Ocean",
@@ -32,26 +38,33 @@
     },
     {
       "question": "Which element has the chemical symbol 'O'?",
+      "type": "options",
+
       "options": ["Gold", "Oxygen", "Hydrogen", "Osmium"],
       "answer": "Oxygen"
     },
     {
       "question": "In which year did the Titanic sink?",
-      "options": ["1905", "1912", "1920", "1935"],
+      "type": "text",
       "answer": "1912"
     },
     {
       "question": "Which country is known as the Land of the Rising Sun?",
+      "type": "options",
+
       "options": ["China", "Japan", "South Korea", "India"],
       "answer": "Japan"
     },
     {
       "question": "What is the smallest unit of life?",
-      "options": ["Atom", "Molecule", "Cell", "Organism"],
+      "type": "text",
+
       "answer": "Cell"
     },
     {
       "question": "Who was the first person to walk on the moon?",
+      "type": "options",
+
       "options": [
         "Neil Armstrong",
         "Buzz Aldrin",
@@ -62,8 +75,24 @@
     },
     {
       "question": "Which language is the most widely spoken in the world?",
+      "type": "options",
+
       "options": ["English", "Mandarin Chinese", "Spanish", "Hindi"],
       "answer": "Mandarin Chinese"
+    },
+    {
+      "question": "Which is the most used search Enginge in the world?",
+      "type": "image",
+      "options": [
+        {
+          "src": "./assets/google.png",
+          "answer": "google"
+        },
+        { "src": "./assets/Bing.png", "answer": "bing" },
+        { "src": "./assets/Yahoo.png", "answer": "yahoo" },
+        { "src": "./assets/baidu.png", "answer": "baidu" }
+      ],
+      "answer": "google"
     }
   ]
 }

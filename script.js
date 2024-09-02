@@ -58,7 +58,7 @@ const startTimer = () => {
 };
 
 const displayQuestion = () => {
-  if (currentQuestionIndex >= quiz.length) return; // No more questions
+  if (currentQuestionIndex >= quiz.length) return;
 
   const question = quiz[currentQuestionIndex];
   if (!question) return;
@@ -68,7 +68,7 @@ const displayQuestion = () => {
   ).innerHTML = `<h2>${question.question}</h2>`;
 
   const optionsDiv = document.querySelector(".options");
-  optionsDiv.innerHTML = ""; // Clear existing options
+  optionsDiv.innerHTML = "";
   question.options.forEach((option) => {
     optionsDiv.innerHTML += `
       <label>
@@ -77,30 +77,67 @@ const displayQuestion = () => {
       </label><br>
     `;
   });
+
+  if (question.type === "text") {
+    optionsDiv.innerHTML = `    <input
+        type="text"
+        id="text-answer"
+        placeholder="type your answer here"
+      >`;
+  } else if (question.type === "image") {
+    question.options.forEach((option) => {
+      optionsDiv.innerHTML += `
+        <label>
+          <input type="radio" name="answer" value="${option.answer}">
+          <img src="${option.src}" alt="${option.answer}" style="width: 100px; height: 100px;">
+        </label><br>
+      `;
+    });
+  }
 };
 
 const checkAnswer = () => {
-  const selectedOption = document.querySelector('input[name="answer"]:checked');
-  if (selectedOption) {
-    const selectedAnswer = selectedOption.value;
-    const question = quiz[currentQuestionIndex];
-    if (selectedAnswer === question.answer) {
-      score += 5;
+  const question = quiz[currentQuestionIndex];
+
+  let isCorrect = false;
+
+  if (question.type === "text") {
+    const answerField = document.getElementById("text-answer");
+    const userAnswer = answerField.value.trim();
+    isCorrect = userAnswer === question.answer;
+  } else if (question.type === "options") {
+    const selectedOption = document.querySelector(
+      'input[name="answer"]:checked'
+    );
+    if (selectedOption) {
+      const selectedAnswer = selectedOption.value;
+      isCorrect = selectedAnswer === question.answer;
     }
-
-    currentQuestionIndex++;
-
-    100;
-
-    if (currentQuestionIndex < quiz.length) {
-      displayQuestion();
-    } else {
-      showResult();
+  } else if (question.type === "image") {
+    const selectedOption = document.querySelector(
+      'input[name="answer"]:checked'
+    );
+    if (selectedOption) {
+      const selectedAnswer = selectedOption.value;
+      isCorrect = selectedAnswer === question.answer;
     }
   } else {
-    console.log("No options selected");
+    console.error("Unknown question type:", question.type);
+  }
+
+  if (isCorrect) {
+    score += 5;
+  }
+
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < quiz.length) {
+    displayQuestion();
+  } else {
+    showResult();
   }
 };
+
 const showResult = () => {
   audio.pause();
   document.getElementById("quiz").style.display = "none";

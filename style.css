@@ -41,6 +41,10 @@ button {
   cursor: pointer;
   margin-top: 20px;
 }
+button:hover {
+  transform: scale(1.2);
+  transition: all 0.5;
+}
 
 #timer {
   margin-bottom: 20px;
