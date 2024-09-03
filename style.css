@@ -19,7 +19,7 @@ body {
   text-align: center;
   padding: 20px;
   border: 1px solid #ddd;
-  background-color: #d64040;
+  background-color: #22ccd2;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* position: relative; */
@@ -32,7 +32,7 @@ body {
 }
 
 button {
-  background-color: #0acf0a;
+  background-color: #cf0a0a;
   color: white;
   border: none;
   padding: 10px 20px;
