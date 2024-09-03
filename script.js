@@ -1,12 +1,13 @@
-let timeLeft = 60;
+let timeLeft = 120;
 let timer;
 const audio = document.getElementById("timerAudio");
-audio.playbackRate = 0.5;
+// audio.playbackRate = 0.5;
 let score = 0;
 let result = "Failed";
 let currentQuestionIndex = 0;
 let quiz = [];
-const PASSING_SCORE = 10;
+let incorrectAnswers = [];
+const PASSING_SCORE = 20;
 
 document.getElementById("start-btn").addEventListener("click", () => {
   document.getElementById("home-page").style.display = "none";
@@ -19,9 +20,10 @@ document.getElementById("start-btn").addEventListener("click", () => {
 });
 
 document.getElementById("restart-btn").addEventListener("click", () => {
-  timeLeft = 60;
+  timeLeft = 120;
   score = 0;
   currentQuestionIndex = 0;
+  incorrectAnswers = [];
 
   document.getElementById("result").style.display = "none";
   document.getElementById("home-page").style.display = "block";
@@ -37,7 +39,7 @@ const fetchQuizQuestion = async () => {
     const allQuestions = data.quiz;
 
     const shuffledQuestion = allQuestions.sort(() => Math.random() - 0.5);
-    quiz = shuffledQuestion.slice(0, 5);
+    quiz = shuffledQuestion.slice(0, 10);
     console.log(quiz);
     displayQuestion();
   } catch (error) {
@@ -58,7 +60,7 @@ const startTimer = () => {
 };
 
 const displayQuestion = () => {
-  if (currentQuestionIndex >= quiz.length) return;
+  if (currentQuestionIndex >= quiz.length) return; // No more questions
 
   const question = quiz[currentQuestionIndex];
   if (!question) return;
@@ -66,60 +68,59 @@ const displayQuestion = () => {
   document.getElementById(
     "question"
   ).innerHTML = `<h2>${question.question}</h2>`;
-
   const optionsDiv = document.querySelector(".options");
-  optionsDiv.innerHTML = "";
-  question.options.forEach((option) => {
-    optionsDiv.innerHTML += `
-      <label>
-        <input type="radio" name="answer" value="${option}">
-        ${option}
-      </label><br>
-    `;
-  });
+  optionsDiv.innerHTML = ""; // Clear existing options
 
-  if (question.type === "text") {
-    optionsDiv.innerHTML = `    <input
-        type="text"
-        id="text-answer"
-        placeholder="type your answer here"
-      >`;
-  } else if (question.type === "image") {
-    question.options.forEach((option) => {
-      optionsDiv.innerHTML += `
-        <label>
-          <input type="radio" name="answer" value="${option.answer}">
-          <img src="${option.src}" alt="${option.answer}" style="width: 100px; height: 100px;">
-        </label><br>
+  switch (question.type) {
+    case "text":
+      optionsDiv.innerHTML = `
+        <input type="text" id="text-answer" placeholder="Type your answer here">
       `;
-    });
+      break;
+
+    case "options":
+      question.options.forEach((option) => {
+        optionsDiv.innerHTML += `
+          <label>
+            <input type="radio" name="answer" value="${option}">
+            ${option}
+          </label><br>
+        `;
+      });
+      break;
+
+    case "image":
+      question.options.forEach((option) => {
+        optionsDiv.innerHTML += `
+          <label>
+            <input type="radio" name="answer" value="${option.answer}">
+            <img src="${option.src}" alt="${option.answer}" style="width: 100px; height: 100px; margin: 5px; border: 1px solid #ddd; border-radius: 5px;">
+          </label><br>
+        `;
+      });
+      break;
+
+    default:
+      console.error("Unknown question type:", question.type);
+      break;
   }
 };
-
 const checkAnswer = () => {
   const question = quiz[currentQuestionIndex];
-
   let isCorrect = false;
+  let userAnswer = "";
 
   if (question.type === "text") {
     const answerField = document.getElementById("text-answer");
-    const userAnswer = answerField.value.trim();
-    isCorrect = userAnswer === question.answer;
-  } else if (question.type === "options") {
+    userAnswer = answerField.value.trim().toLowerCase();
+    isCorrect = userAnswer === question.answer.toLowerCase();
+  } else if (question.type === "options" || question.type === "image") {
     const selectedOption = document.querySelector(
       'input[name="answer"]:checked'
     );
     if (selectedOption) {
-      const selectedAnswer = selectedOption.value;
-      isCorrect = selectedAnswer === question.answer;
-    }
-  } else if (question.type === "image") {
-    const selectedOption = document.querySelector(
-      'input[name="answer"]:checked'
-    );
-    if (selectedOption) {
-      const selectedAnswer = selectedOption.value;
-      isCorrect = selectedAnswer === question.answer;
+      userAnswer = selectedOption.value;
+      isCorrect = userAnswer === question.answer;
     }
   } else {
     console.error("Unknown question type:", question.type);
@@ -127,6 +128,13 @@ const checkAnswer = () => {
 
   if (isCorrect) {
     score += 5;
+  } else if (userAnswer) {
+    // Only record incorrect answers if an answer was provided
+    incorrectAnswers.push({
+      question: question.question,
+      answer: userAnswer,
+      correct: question.answer,
+    });
   }
 
   currentQuestionIndex++;
@@ -149,9 +157,18 @@ const showResult = () => {
     result = "Failed";
   }
 
+  let incorrectAnswersHTML = "";
+  incorrectAnswers.forEach((item) => {
+    incorrectAnswersHTML += `
+      <p><strong>Question:</strong> ${item.question}<br>
+      <strong>Your Answer:</strong> ${item.answer}<br>
+      <strong>Correct Answer:</strong> ${item.correct}</p>
+    `;
+  });
+
   document.getElementById(
     "score"
-  ).innerHTML = `Your score is: ${score}<br/> status: ${result}`;
+  ).innerHTML = `Your score is: ${score}<br>Status: ${result}<br><br>Incorrect Answers:<br>${incorrectAnswersHTML}`;
 };
 
 document.getElementById("submit-btn").addEventListener("click", checkAnswer);

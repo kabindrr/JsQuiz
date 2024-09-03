@@ -1,84 +1,223 @@
 {
   "quiz": [
     {
-      "question": "What is the capital city of France?",
+      "question": "What is JavaScript??",
       "type": "options",
-      "options": ["Berlin", "Madrid", "Paris", "Rome"],
-      "answer": "Paris"
+      "options": [
+        "A programming language",
+        "A database management system",
+        "A markup language",
+        "An operating system"
+      ],
+      "answer": "A programming language"
     },
     {
-      "question": "Which planet is known as the Red Planet?",
+      "question": "What is the purpose of the 'typeof' operator in JavaScript?",
       "type": "options",
-      "options": ["Earth", "Mars", "Jupiter", "Venus"],
-      "answer": "Mars"
+      "options": [
+        "To create a new variable",
+        "To concatenate strings",
+        "To define a function",
+        "To check the data type of a variable"
+      ],
+      "answer": "To check the data type of a variable"
     },
     {
-      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "question": "What is the purpose of the return statement in a function?",
       "type": "options",
 
       "options": [
-        "William Shakespeare",
-        "Mark Twain",
-        "Jane Austen",
-        "Charles Dickens"
+        "To print a value to the console",
+        "To exit the function and return a value",
+        "To declare a variable",
+        "To concatenate strings"
       ],
-      "answer": "William Shakespeare"
+      "answer": "To exit the function and return a value"
     },
     {
-      "question": "What is the largest ocean on Earth?",
+      "question": "What is the difference between null and undefined in JavaScript?",
       "type": "options",
 
       "options": [
-        "Atlantic Ocean",
-        "Indian Ocean",
-        "Southern Ocean",
-        "Pacific Ocean"
+        "They are the same",
+        "null represents the absence of a value, while undefined is a variable that has been declared but not assigned a value",
+        "undefined represents the absence of a value, while null is a variable that has been declared but not assigned a value",
+        "null and undefined are both used to represent an empty string"
       ],
-      "answer": "Pacific Ocean"
+      "answer": "null represents the absence of a value, while undefined is a variable that has been declared but not assigned a value"
     },
     {
-      "question": "Which element has the chemical symbol 'O'?",
+      "question": "Which keyword is used to prevent a variable from being modified?",
       "type": "options",
 
-      "options": ["Gold", "Oxygen", "Hydrogen", "Osmium"],
-      "answer": "Oxygen"
+      "options": ["freeze", "const", "lock", "protect"],
+      "answer": "const"
     },
     {
-      "question": "In which year did the Titanic sink?",
+      "question": "What is the purpose of the querySelectorAll method in JavaScript?",
+      "type": "options",
+      "options": [
+        "Selects the first element that matches a specified CSS selector",
+        "Selects all elements that match a specified CSS selector",
+        "Selects the last element that matches a specified CSS selector",
+        "Selects an element by its ID"
+      ],
+      "answer": "Selects all elements that match a specified CSS selector"
+    },
+    {
+      "question": "How do you reverse the order of elements in an array?",
       "type": "text",
-      "answer": "1912"
+      "answer": "reverse()"
     },
     {
-      "question": "Which country is known as the Land of the Rising Sun?",
-      "type": "options",
-
-      "options": ["China", "Japan", "South Korea", "India"],
-      "answer": "Japan"
-    },
-    {
-      "question": "What is the smallest unit of life?",
-      "type": "text",
-
-      "answer": "Cell"
-    },
-    {
-      "question": "Who was the first person to walk on the moon?",
+      "question": "What does the addEventListener method do in JavaScript?",
       "type": "options",
 
       "options": [
-        "Neil Armstrong",
-        "Buzz Aldrin",
-        "Yuri Gagarin",
-        "John Glenn"
+        "Adds an event listener to a DOM element",
+        "Removes an event listener from a DOM element",
+        "Appends a new child element to a parent element",
+        "Adds a new event to the event queue"
       ],
-      "answer": "Neil Armstrong"
+      "answer": "Adds an event listener to a DOM element"
     },
     {
-      "question": "Which language is the most widely spoken in the world?",
+      "question": "What is the purpose of the setTimeout function in JavaScript?",
+      "type": "options",
+      "options": [
+        "Delays the execution of a function by a specified number of milliseconds",
+        "Repeats the execution of a function at a set interval",
+        "Halts the execution of a function",
+        "Sets the time zone of the script"
+      ],
+
+      "answer": "Delays the execution of a function by a specified number of milliseconds"
+    },
+    {
+      "question": "What is the purpose of the Promise object in JavaScript?",
       "type": "options",
 
-      "options": ["English", "Mandarin Chinese", "Spanish", "Hindi"],
-      "answer": "Mandarin Chinese"
+      "options": [
+        "To handle asynchronous operations and represent a value that might be available now, or in the future, or never",
+        "To create a new object",
+        "To check if a variable is defined",
+        "To concatenate strings"
+      ],
+      "answer": "To handle asynchronous operations and represent a value that might be available now, or in the future, or never"
+    },
+    {
+      "question": "What is the purpose of the filter method in JavaScript?",
+      "type": "options",
+
+      "options": [
+        "Iterates over the elements of an array and applies a function to each element",
+        "Creates a new array with all elements that pass a test",
+        "Combines two arrays into one",
+        "Reduces the array to a single value"
+      ],
+      "answer": "Creates a new array with all elements that pass a test"
+    },
+    {
+      "question": "What is the purpose of the slice method in JavaScript?",
+      "type": "options",
+
+      "options": [
+        "Returns a section of a string",
+        "Removes elements from an array and returns the removed elements",
+        "Adds elements to the end of an array",
+        "Reverses the elements of an array"
+      ],
+      "answer": "Creates a new array with all elements that pass a test"
+    },
+    {
+      "question": "What is the purpose of the shift method in JavaScript?",
+      "type": "options",
+
+      "options": [
+        "Adds elements to the end of an array",
+        "Removes elements from the end of an array",
+        "Adds elements to the end of an array",
+        "Removes elements from the beginning of an array"
+      ],
+      "answer": "Removes elements from the beginning of an array"
+    },
+    {
+      "question": "What is the purpose of the includes method in JavaScript?",
+      "type": "options",
+
+      "options": [
+        "Checks if a value is not a number",
+        "Checks if a value is a number",
+        "Checks if an array includes a certain element",
+        "Checks if a string includes a certain substring"
+      ],
+      "answer": "Checks if an array includes a certain element"
+    },
+    {
+      "question": "What is hoisting in JavaScript??",
+      "type": "options",
+
+      "options": [
+        "Process of moving declarations to the bottom of their scope",
+        "Checks if a value is a number",
+        "Checks if an array includes a certain element",
+        "Process of moving declarations to the top of their scope"
+      ],
+      "answer": "Process of moving declarations to the top of their scope"
+    },
+    {
+      "question": "What does NaN property in JavaScript?",
+      "type": "text",
+
+      "answer": "not-a-number"
+    },
+    {
+      "question": "What is memoization in JavaScript?",
+      "type": "text",
+
+      "answer": "it is a way to optimize application performance by caching results of time-consuming pure functions calculations"
+    },
+    {
+      "question": "Which method is used to retrieve a character from a certain index?",
+      "type": "text",
+
+      "answer": "charAt()"
+    },
+    {
+      "question": "What is Object Destructuring?",
+      "type": "text",
+
+      "answer": "method to extract elements from an array or an object"
+    },
+    {
+      "question": "What are the pop-up boxes available in JavaScript??",
+      "type": "text",
+
+      "answer": "alert, confirm, prompt"
+    },
+    {
+      "question": " Explain Closures in JavaScript?",
+      "type": "text",
+
+      "answer": "ability of a function to remember the variables and functions that are declared in its outer scope"
+    },
+    {
+      "question": "What are the different states of a Promise in JavaScript?",
+      "type": "text",
+
+      "answer": "pending,fulfilled,rejected,settled"
+    },
+    {
+      "question": "Write three major types of errors in JavaScript.",
+      "type": "text",
+
+      "answer": "syntax errors, runtime errors, logical errors"
+    },
+    {
+      "question": "What is Strict mode in JavaScript?",
+      "type": "text",
+
+      "answer": "Javascript mode to enforce stricter parsing and error handling on your javascript code"
     },
     {
       "question": "Which is the most used search Enginge in the world?",
