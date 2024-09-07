@@ -169,11 +169,17 @@
       "question": "What does NaN property in JavaScript?",
       "type": "text",
 
-      "answer": "not-a-number"
+      "answer": "notanumber"
     },
     {
       "question": "What is memoization in JavaScript?",
-      "type": "text",
+      "type": "options",
+      "options": [
+        "method to extract elements from an array or an object",
+        "it is a way to optimize application performance by caching results of time-consuming pure functions calculations",
+        "ability of a function to remember the variables and functions that are declared in its outer scope",
+        "Javascript mode to enforce stricter parsing and error handling on your javascript code"
+      ],
 
       "answer": "it is a way to optimize application performance by caching results of time-consuming pure functions calculations"
     },
@@ -185,38 +191,64 @@
     },
     {
       "question": "What is Object Destructuring?",
-      "type": "text",
+      "type": "options",
+      "options": [
+        "method to extract elements from an array or an object",
+        "it is a way to optimize application performance by caching results of time-consuming pure functions calculations",
+        "ability of a function to remember the variables and functions that are declared in its outer scope",
+        "Javascript mode to enforce stricter parsing and error handling on your javascript code"
+      ],
 
       "answer": "method to extract elements from an array or an object"
     },
     {
-      "question": "What are the pop-up boxes available in JavaScript??",
-      "type": "text",
+      "question": "What is a  common pop-up box available in JavaScript??",
+      "type": "options",
+      "options": ["alert", "show_message", "showToast", "tkinter"],
 
-      "answer": "alert, confirm, prompt"
+      "answer": "alert"
     },
     {
       "question": " Explain Closures in JavaScript?",
-      "type": "text",
+      "type": "options",
+      "options": [
+        "method to extract elements from an array or an object",
+        "it is a way to optimize application performance by caching results of time-consuming pure functions calculations",
+        "ability of a function to remember the variables and functions that are declared in its outer scope",
+        "Javascript mode to enforce stricter parsing and error handling on your javascript code"
+      ],
 
       "answer": "ability of a function to remember the variables and functions that are declared in its outer scope"
     },
     {
-      "question": "What are the different states of a Promise in JavaScript?",
-      "type": "text",
+      "question": "Which is not a state of a Promise in JavaScript?",
+      "type": "options",
+      "options": ["pending", "fulfilled", "rejected", "completed"],
 
-      "answer": "pending,fulfilled,rejected,settled"
+      "answer": "completed"
     },
     {
-      "question": "Write three major types of errors in JavaScript.",
-      "type": "text",
+      "question": "Write is not a  type of error in JavaScript?",
+      "type": "options",
+      "options": [
+        "syntax error",
+        "logical error",
+        "runtime error",
+        "value error"
+      ],
 
-      "answer": "syntax errors, runtime errors, logical errors"
+      "answer": "value error"
     },
     {
       "question": "What is Strict mode in JavaScript?",
-      "type": "text",
+      "type": "options",
 
+      "options": [
+        "method to extract elements from an array or an object",
+        "it is a way to optimize application performance by caching results of time-consuming pure functions calculations",
+        "ability of a function to remember the variables and functions that are declared in its outer scope",
+        "Javascript mode to enforce stricter parsing and error handling on your javascript code"
+      ],
       "answer": "Javascript mode to enforce stricter parsing and error handling on your javascript code"
     },
     {

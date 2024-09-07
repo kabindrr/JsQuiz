@@ -104,6 +104,8 @@ const displayQuestion = () => {
       console.error("Unknown question type:", question.type);
       break;
   }
+
+  updateProgressBar();
 };
 const checkAnswer = () => {
   const question = quiz[currentQuestionIndex];
@@ -168,7 +170,30 @@ const showResult = () => {
 
   document.getElementById(
     "score"
-  ).innerHTML = `Your score is: ${score}<br>Status: ${result}<br><br>Incorrect Answers:<br>${incorrectAnswersHTML}`;
+  ).innerHTML = `  <span style="font-size: 2em; font-weight: bold; color: #B71c1c;">Your score is: ${score}</span><br>
+    <span style="font-size: 1.5em; font-weight: bold; color: #FF5722;">Status: ${result}</span><br><br>
+    Incorrect Answers:<br>${incorrectAnswersHTML}`;
 };
 
 document.getElementById("submit-btn").addEventListener("click", checkAnswer);
+
+const totalQuestions = 10; // Total number of questions
+
+const updateProgressBar = () => {
+  const progressBar = document.getElementById("progress-bar");
+  const progressText = document.getElementById("progress-text");
+
+  // Calculate the percentage of progress
+  const progressPercentage =
+    ((currentQuestionIndex + 1) / totalQuestions) * 100;
+
+  // Update the width of the progress bar
+  progressBar.style.width = `${progressPercentage}%`;
+
+  // Optionally, update the progress text
+  if (progressText) {
+    progressText.textContent = `Question ${
+      currentQuestionIndex + 1
+    } of ${totalQuestions}`;
+  }
+};
